@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Eli! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Confetti Background -->
+        <canvas id="confetti"></canvas>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Birthday Card -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="balloon balloon1">🎈</div>
+                        <div class="balloon balloon2">🎈</div>
+                        <div class="balloon balloon3">🎈</div>
+                        <h1 class="title">¡Feliz Cumpleaños!</h1>
+                        <div class="name">Eli</div>
+                        <div class="age">18</div>
+                        <div class="sparkles">✨</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="message">
+                            <h2>¡Feliz 18 años, Eli! 🎂</h2>
+                            <p class="message-text">
+                                Espero que tengas un día increíble lleno de risas y buenos momentos. 
+                                Que este nuevo año te traiga muchas experiencias geniales y todo lo que te propongas.
+                            </p>
+                            <p class="message-text">
+                                ¡Disfruta tu día al máximo mi niña! 🎉
+                            </p>
+                            <div class="hearts">🎉✨</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Elements -->
+            <div class="interactive-section">
+                <button class="flip-btn" onclick="flipCard()">Abrir Tarjeta</button>
+                <button class="cake-btn" onclick="showCake()">🎂 Ver Pastel</button>
+            </div>
+            
+            <!-- Cake Modal -->
+            <div id="cakeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeCake()">&times;</span>
+                    <div class="cake-container">
+                        <div class="cake">
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                            <div class="cake-top"></div>
+                            <div class="cake-middle"></div>
+                            <div class="cake-base"></div>
+                            <div class="cake-decoration"></div>
+                            <div class="cake-decoration"></div>
+                            <div class="cake-decoration"></div>
+                            <div class="cake-decoration"></div>
+                            <div class="cake-decoration"></div>
+                            <div class="cake-decoration"></div>
+                        </div>
+                        <p class="cake-message">¡Toca el pastel para soplar la vela y pide un deseo! 🎂✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-heart">💝</div>
+        <div class="floating-star">⭐</div>
+        <div class="floating-balloon">🎈</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
