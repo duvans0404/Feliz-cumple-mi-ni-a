@@ -11,11 +11,12 @@ const gravity = 0.5;
 const terminalVelocity = 5;
 const drag = 0.075;
 const colors = [
-    { front: '#ff6b9d', back: '#c44569' },
-    { front: '#4facfe', back: '#00f2fe' },
-    { front: '#f8b500', back: '#ffd700' },
-    { front: '#a8edea', back: '#fed6e3' },
-    { front: '#ff8fab', back: '#ff6b9d' }
+    { front: '#10b981', back: '#059669' },
+    { front: '#34d399', back: '#6ee7b7' },
+    { front: '#86efac', back: '#a7f3d0' },
+    { front: '#ffffff', back: '#f0fdf4' },
+    { front: '#000000', back: '#1f2937' },
+    { front: '#047857', back: '#065f46' }
 ];
 
 // Confetti class
@@ -154,6 +155,10 @@ function blowCandle() {
     flame.style.opacity = '0';
     flame.style.transform = 'translateX(-50%) scale(0)';
     
+    // Spawn confetti burst near the flame
+    const rect = flame.getBoundingClientRect();
+    spawnConfettiAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 60);
+
     // Show celebration message
     setTimeout(() => {
         const cakeMessage = document.querySelector('.cake-message');
@@ -178,6 +183,25 @@ function blowCandle() {
             cakeMessage.style.animation = '';
         }
     }, 4000);
+}
+
+// Spawn confetti pieces at a screen coordinate
+function spawnConfettiAt(screenX, screenY, count = 40) {
+    // convert screen coords to canvas coords
+    const rect = canvas.getBoundingClientRect();
+    const cx = screenX - rect.left;
+    const cy = screenY - rect.top;
+
+    for (let i = 0; i < count; i++) {
+        const piece = new ConfettiPiece();
+        piece.position.x = cx + (Math.random() * 40 - 20);
+        piece.position.y = cy + (Math.random() * 20 - 10);
+        piece.velocity.x = (Math.random() * 10 - 5);
+        piece.velocity.y = -(Math.random() * 8 + 2);
+        // give a bit more color variety for the burst
+        piece.color = colors[Math.floor(Math.random() * colors.length)];
+        confetti.push(piece);
+    }
 }
 
 // Close modal when clicking outside
