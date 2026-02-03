@@ -418,13 +418,17 @@ body {
 
 .cake-container {
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cake {
     position: relative;
     width: 280px;
     height: 320px;
-    margin: 0 auto 30px;
+    margin: 0 0 30px 0;
     cursor: pointer;
     display: block;
 }
@@ -675,5 +679,36 @@ body {
     .cake-btn {
         width: 200px;
     }
+
+    /* Ajustes específicos para el modal y el pastel en pantallas pequeñas */
+    .modal-content {
+        padding: 20px;
+        margin: 5% auto;
+        width: 95%;
+        max-width: 420px;
+    }
+
+    .cake {
+        width: 220px;
+        height: 260px;
+        margin-bottom: 18px;
+    }
+
+    .cake::after {
+        width: 260px;
+        height: 28px;
+        bottom: -8px;
+    }
+
+    .cake-top { width: 130px; height: 48px; }
+    .cake-middle { width: 170px; height: 64px; top: 36px; }
+    .cake-base { width: 200px; height: 100px; top: 104px; }
+
+    .candle { top: -34px; width: 10px; height: 42px; }
+    .flame { top: -22px; width: 12px; height: 22px; }
+
+    .cake-text { font-size: 1.1em; padding: 4px 10px; border-radius: 12px; }
+    .cake-message { font-size: 1.05em; }
+}
 }
 
